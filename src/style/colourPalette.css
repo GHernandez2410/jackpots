@@ -1,0 +1,75 @@
+.selected-color {
+    background-color: #8DC63F
+}
+
+.header-color {
+    background-color: #373737;
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+}
+
+.leters-color {
+    color: #fff!important;
+    margin-right: 10px!important;
+    margin-left: 10px!important;
+}
+.label-new {
+    background-color: #8DC63F!important;
+    color: #fff!important;
+}
+
+.label-top {
+    background-color: #fff!important ;
+    color: #8DC63F!important;
+}
+
+.web-color {
+    height: 100vh;
+    width: 100vw!important;
+    background-color: #FCFCFC;
+}
+
+.jackpot {
+    opacity:0.5;
+}
+
+.game-image {
+    max-width: 150px!important;
+    margin: 5px!important;
+    margin-Top: 20px!important;
+    background-color: #373737;
+    height: 88.844px!important;
+}
+
+.game-image:after {
+    content: "No Photo"
+}
+
+
+.game-name {
+    text-align: "center";
+}
+
+.title-margin {
+    margin-bottom: 5px!important;
+}
+
+.no-title-margin {
+    margin-bottom: 5px!important;
+    margin-left: 80px!important;
+}
+
+.no-border {
+    border: transparent!important;
+    background-color: #FCFCFC!important;
+}
+
+.badge {
+    padding: .25em .2em!important;
+    margin-left: 2px!important;
+}
+
+.play {
+    padding-left: 52px;
+}
+
