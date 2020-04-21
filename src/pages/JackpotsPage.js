@@ -27,16 +27,6 @@ const JackpotsPage = () => {
                         "isNew": games[i].isNew,
                         "isTop": games[i].isTop
                     }
-                } else {
-                    array[i] = {
-                        "categories": games[i].categories,
-                        "name": games[i].name,
-                        "image": games[i].image,
-                        "id": games[i].id,
-                        "amount": 0,
-                        "isNew": games[i].isNew,
-                        "isTop": games[i].isTop
-                    }
                 }
             }
         }
@@ -47,14 +37,13 @@ const JackpotsPage = () => {
         .then(response => {
             const jackpotsData = require('../data/jackpots.json');
             let array = [];
-            for (let i = 0; i < response.data.length; i++) {
-                let found = false;
-                // filter by category
-                // IS THERE A JACKPOTS CATEGORY??
+            for (let j = 0; j < jackpotsData.length; j++) {
                 // Build an array of items with all the jackpots info 
-                let isNew = response.data[i].categories.includes('new')
-                let isTop = response.data[i].categories.includes('top');
-                for (let j = 0; j < jackpotsData.length && !found; j++) {
+                let found = false;
+                for (let i = 0; i < response.data.length && !found; i++) {
+                    let isNew = response.data[i].categories.includes('new')
+                    let isTop = response.data[i].categories.includes('top');
+
                     if (response.data[i].id === jackpotsData[j].game) {
                         found = true;
                         array[i] = {
@@ -66,21 +55,15 @@ const JackpotsPage = () => {
                             "isNew": isNew,
                             "isTop": isTop
                         }
-                    } else {
-                        array[i] = {
-                            "categories": response.data[i].categories,
-                            "name": response.data[i].name,
-                            "image": response.data[i].image,
-                            "id": response.data[i].id,
-                            "amount": 0,
-                            "isNew": isNew,
-                            "isTop": isTop
-                        }
-                    }
+                    } 
                 }
 
             }
-            setGames(array)
+            let gameList = [];
+            (array).forEach(element => {
+                gameList.push(element)
+            });
+            setGames(gameList)
         });
 
     useEffect(() => {
